@@ -1,0 +1,18 @@
+{
+  "name": "gtbotv2",
+  "version": "1.0.0",
+  "description": "This is the Upvote bot version 1.2. Still under test run.",
+  "main": "voter.js",
+  "dependencies": {
+    "eris": "^0.8.5",
+    "mysql": "^2.15.0",
+    "steem": "^0.7.1",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aquacy",
+  "license": "ISC"
+}
