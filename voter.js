@@ -15,7 +15,9 @@ var regex1 = /(@)+.+(\/)/;
 var wifkey = '5J26ZTv3xiskHLtzeQfgVc6gh5H6QTThHia7P8duwGWRF5Yoc1b';
 var votey = "gtbot";
 var weight = 5000; // 10000 = 100%
-
+setInterval(function () {
+    db.query('SELECT 1');
+}, 5000);
 bot.on("ready", () => {console.log('voter bot started!');}); //when it is ready
 bot.on("messageCreate", (msg) => { // when a message is created
     if(msg.content.match(regex)){
