@@ -3,10 +3,10 @@ var steem = require("steem");
 var mysql = require('mysql');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var con = mysql.createConnection({
-  host: "127.0.0.1",
-  user: "root",
+  host: "sql142.main-hosting.eu.",
+  user: "u785998855_root",
   password: "SChool5l@",
-  database: "voter"
+  database: "u785998855_voter"
 });
 con.connect();
 var bot = new Eris("NDIzMTAwMzY2NDE0OTM4MTEy.DZp3XA.usIaF6ZUsgKZ8Mmo2VmUpmw7v8U");
@@ -57,7 +57,7 @@ bot.on("messageCreate", (msg) => { // when a message is created
                                         });
                                     });
                                 }else{
-                                    var come = 86400 - (time - last);
+                                    var come = 300 - (time - last);
                                     setTimeout(function(){bot.createMessage(channel,'Sorry! Come back after '+come+' seconds.');},1000);
                                 }
                         });
@@ -75,7 +75,7 @@ bot.on("messageCreate", (msg) => { // when a message is created
     var regex2 = /(\$)+(register)+(\ )/;
     if(msg.content.match(regex2)){
         var sender = msg.content.replace(msg.content.match(regex2)[0],"");
-        var memo = 'register';
+        var memo = msg.author.id;
         var transaction = 'Receive  0.001 SBD from '+sender;
         var r = 0;
         var channel = msg.channel.id;
@@ -93,7 +93,7 @@ bot.on("messageCreate", (msg) => { // when a message is created
                             if (this.readyState == 4 && this.status == 200) {
                                 var response = JSON.parse(this.responseText);
                                 for(i in response){
-                                    if(response[i].transaction == transaction && response[i].memo == memo){
+                                    if(response[i].transaction == transaction && response[i].memo == msg.author.id){
                                         con.query('INSERT INTO `voter`(`user`, `lastvote`, `userid`) VALUES ("'+sender+'","0","'+msg.author.id+'")', function (error, results, fields) {
                                             r = 1;
                                             setTimeout(function(){bot.createMessage(channel,'User '+sender+' Registered by <@'+msg.author.id+'>');},1000);
@@ -102,7 +102,7 @@ bot.on("messageCreate", (msg) => { // when a message is created
                                     }
                                 }
                                 setTimeout(function(){if(r == 0){
-                                    setTimeout(function(){bot.createMessage(channel,'Please Send 0.001 SBD to '+votey+' with memo:`'+memo+'` and Try again.');},1000);
+                                    setTimeout(function(){bot.createMessage(channel,'<@'+msg.author.id+'>' + 'Please Send 0.001 SBD to '+votey+' with memo:`'+memo+'` and Try again.');},1000);
                                 }},2000);
                             }
                         };
