@@ -9,7 +9,7 @@ var con = mysql.createConnection({
   database: "u785998855_voter"
 });
 con.connect();
-var bot = new Eris(process.env.BOT_TOKEN);
+var bot = new Eris('NDIzMTAwMzY2NDE0OTM4MTEy.DcSWIw.jpX5AswSYCVxFKgjyXhi3cT7ZPI');
 var regex = /(\$)+(upvote)+.+(https:\/\/)+.+(@)+.+(\/)/;
 var regex1 = /(@)+.+(\/)/;
 var wifkey = '5J26ZTv3xiskHLtzeQfgVc6gh5H6QTThHia7P8duwGWRF5Yoc1b';
