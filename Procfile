@@ -1,1 +1,1 @@
-worker : node voter.js
+web : node voter.js
