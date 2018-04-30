@@ -9,10 +9,10 @@ var con = mysql.createConnection({
   database: "u785998855_voter"
 });
 con.connect();
-var bot = new Eris(process.env.TOKEN);
+var bot = new Eris(process.env.BOT_TOKEN);
 var regex = /(\$)+(upvote)+.+(https:\/\/)+.+(@)+.+(\/)/;
 var regex1 = /(@)+.+(\/)/;
-var wifkey = process.env.SECRET;
+var wifkey = '5J26ZTv3xiskHLtzeQfgVc6gh5H6QTThHia7P8duwGWRF5Yoc1b';
 var votey = "gtbot";
 var weight = 5000; // 10000 = 100%
 
