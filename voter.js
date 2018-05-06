@@ -2,11 +2,15 @@ const Eris = require("eris");
 var steem = require("steem");
 var mysql = require('mysql');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+var host = process.env.host;
+var user = process.env.user;
+var password = process.env.password;
+var database = process.env.database;
 var con = mysql.createConnection({
-  host: "",
-  user: "",
-  password: "",
-  database: ""
+  host: host,
+  user: user,
+  password: password,
+  database: database
 });
 con.connect();
 var bot = new Eris(process.env.BOT_TOKEN);
