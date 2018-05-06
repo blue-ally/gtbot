@@ -8,7 +8,7 @@ var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 //  password: "gsMLHvy4Q1IH",
 //  database: "u785998855_voter"
 //});
-con.connect();
+//con.connect();
 var bot = new Eris(process.env.BOT_TOKEN);
 var regex = /(\$)+(upvote)+.+(https:\/\/)+.+(@)+.+(\/)/;
 var regex1 = /(@)+.+(\/)/;
