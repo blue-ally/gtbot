@@ -2,10 +2,10 @@ const Eris = require("eris");
 var steem = require("steem");
 var mysql = require('mysql');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-var host = process.env.host;
-var user = process.env.user;
-var password = process.env.password;
-var database = process.env.database;
+var host = process.env.Mysql_host;
+var user = process.env.Mysql_user;
+var password = process.env.Mysql_password;
+var database = process.env.Mysql_database;
 var con = mysql.createConnection({
   host: host,
   user: user,
