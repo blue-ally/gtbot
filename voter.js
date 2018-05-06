@@ -2,12 +2,12 @@ const Eris = require("eris");
 var steem = require("steem");
 var mysql = require('mysql');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-var con = mysql.createConnection({
-  host: "sql142.main-hosting.eu.",
-  user: "u785998855_root",
-  password: "gsMLHvy4Q1IH",
-  database: "u785998855_voter"
-});
+//var con = mysql.createConnection({
+//  host: "sql142.main-hosting.eu.",
+//  user: "u785998855_root",
+//  password: "gsMLHvy4Q1IH",
+//  database: "u785998855_voter"
+//});
 con.connect();
 var bot = new Eris(process.env.BOT_TOKEN);
 var regex = /(\$)+(upvote)+.+(https:\/\/)+.+(@)+.+(\/)/;
