@@ -2,15 +2,11 @@ const Eris = require("eris");
 var steem = require("steem");
 var mysql = require('mysql');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-var host = process.env.Mysql_host;
-var user = process.env.Mysql_user;
-var password = process.env.Mysql_password;
-var database = process.env.Mysql_database;
 var con = mysql.createConnection({
-  host: host,
-  user: user,
-  password: password,
-  database: database
+  host: "sql142.main-hosting.eu.",
+  user: "u785998855_root",
+  password: "gsMLHvy4Q1IH",
+  database: "u785998855_voter"
 });
 con.connect();
 var bot = new Eris(process.env.BOT_TOKEN);
@@ -80,7 +76,7 @@ bot.on("messageCreate", (msg) => { // when a message is created
     if(msg.content.match(regex2)){
         var sender = msg.content.replace(msg.content.match(regex2)[0],"");
         var memo = msg.author.id;
-        var transaction = 'Receive  0.1 SBD from '+sender;
+        var transaction = 'Receive  0.001 SBD from '+sender;
         var r = 0;
         var channel = msg.channel.id;
 
@@ -106,7 +102,7 @@ bot.on("messageCreate", (msg) => { // when a message is created
                                     }
                                 }
                                 setTimeout(function(){if(r == 0){
-                                    setTimeout(function(){bot.createMessage(channel,'<@'+msg.author.id+'>' + 'Please Send 0.1 SBD to '+votey+' with memo:`'+memo+'` and Try again.');},1000);
+                                    setTimeout(function(){bot.createMessage(channel,'<@'+msg.author.id+'>' + 'Please Send 0.001 SBD to '+votey+' with memo:`'+memo+'` and Try again.');},1000);
                                 }},2000);
                             }
                         };
